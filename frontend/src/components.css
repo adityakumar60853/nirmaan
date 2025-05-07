@@ -1,0 +1,620 @@
+/* ========== Base Styles ========== */
+:root {
+  /* Colors */
+  --primary: #1a73e8;
+  --primary-dark: #1557b0;
+  --secondary: #f50057;
+  --background: #f8f9fa;
+  --text: #202124;
+  --text-light: #5f6368;
+  --white: #ffffff;
+  --accent: #F59E0B;
+  --success: #10B981;
+  --error: #EF4444;
+  
+  /* Backgrounds */
+  --bg-white: #FFFFFF;
+  --bg-light: #F8FAFC;
+  --bg-gray: #F1F5F9;
+  
+  /* Text */
+  --text-dark: #202124;
+  --text-gray: #5f6368;
+  --text-light: #80868b;
+  
+  /* Borders */
+  --border-color: #dadce0;
+  --border-radius: 4px;
+  
+  /* Shadows */
+  --shadow: 0 1px 2px 0 rgba(60,64,67,0.3), 0 1px 3px 1px rgba(60,64,67,0.15);
+  --shadow-sm: 0 1px 2px 0 rgba(60,64,67,0.3);
+  --shadow-md: 0 2px 4px 0 rgba(60,64,67,0.3);
+  --shadow-lg: 0 4px 8px 0 rgba(60,64,67,0.3);
+  
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --spacing-2xl: 4rem;
+  --spacing-3xl: 6rem;
+  
+  /* Transitions */
+  --transition: all 0.3s ease;
+}
+
+/* ========== Reset & Base ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Google Sans', 'Roboto', system-ui, -apple-system, sans-serif;
+  background-color: var(--background);
+  color: var(--text);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ========== Layout ========== */
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.App {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ========== Navbar ========== */
+.MuiAppBar-root {
+  background: linear-gradient(135deg, #1a73e8 0%, #1557b0 100%) !important;
+  color: var(--white) !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
+.MuiToolbar-root {
+  min-height: 70px !important;
+  padding: 0 var(--spacing-lg) !important;
+}
+
+.navbar-logo {
+  height: 40px;
+  margin-right: var(--spacing-md);
+}
+
+.navbar-link {
+  color: var(--white) !important;
+  font-weight: 500 !important;
+  padding: var(--spacing-sm) var(--spacing-md) !important;
+  border-radius: var(--border-radius) !important;
+  transition: var(--transition) !important;
+}
+
+.navbar-link:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  transform: translateY(-2px) !important;
+}
+
+.navbar-button {
+  background-color: var(--white) !important;
+  color: var(--primary) !important;
+  font-weight: 500 !important;
+  padding: var(--spacing-sm) var(--spacing-md) !important;
+  border-radius: var(--border-radius) !important;
+  transition: var(--transition) !important;
+}
+
+.navbar-button:hover {
+  background-color: var(--white) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: var(--shadow-md) !important;
+}
+
+/* ========== Home Page ========== */
+.home-container {
+  min-height: 100vh;
+  background-color: var(--background);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding-top: 64px;
+}
+
+.hero-section {
+  position: relative;
+  padding: var(--spacing-3xl) 0;
+  text-align: center;
+  z-index: 1;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, var(--white) 0%, var(--bg-light) 100%);
+  margin-bottom: var(--spacing-2xl);
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: var(--spacing-lg);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  transition: var(--transition);
+  position: relative;
+  display: inline-block;
+}
+
+.hero-title:hover {
+  transform: translateY(-5px);
+  color: var(--primary);
+}
+
+.hero-title::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: var(--primary);
+  transition: var(--transition);
+}
+
+.hero-title:hover::after {
+  width: 100%;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  color: var(--text-light);
+  margin-bottom: var(--spacing-2xl);
+  line-height: 1.6;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 400;
+  transition: var(--transition);
+}
+
+.hero-subtitle:hover {
+  transform: scale(1.02);
+  color: var(--text-dark);
+}
+
+.hero-buttons {
+  display: flex;
+  gap: var(--spacing-lg);
+  justify-content: center;
+  margin-top: var(--spacing-xl);
+}
+
+.features-section {
+  padding: var(--spacing-3xl) 0;
+  position: relative;
+  z-index: 1;
+  background-color: var(--white);
+  margin-top: auto;
+}
+
+.feature-card {
+  height: 100%;
+  background: var(--white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  overflow: hidden;
+  padding: var(--spacing-xl);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border-color);
+  position: relative;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: var(--shadow-lg);
+}
+
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--primary);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: var(--transition);
+}
+
+.feature-card:hover::before {
+  transform: scaleX(1);
+}
+
+.feature-card .MuiCardContent-root {
+  padding: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.feature-card .MuiTypography-h5 {
+  font-size: 1.375rem;
+  font-weight: 500;
+  margin-bottom: var(--spacing-md);
+  color: var(--text-dark);
+  transition: var(--transition);
+}
+
+.feature-card:hover .MuiTypography-h5 {
+  color: var(--primary);
+  transform: translateX(5px);
+}
+
+.feature-card .MuiTypography-body1 {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: var(--spacing-xl);
+  flex: 1;
+  color: var(--text-gray);
+  transition: var(--transition);
+}
+
+.feature-card:hover .MuiTypography-body1 {
+  color: var(--text-dark);
+}
+
+.feature-card .MuiButton-root {
+  margin-top: auto;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: var(--border-radius);
+  text-transform: none;
+  letter-spacing: 0.25px;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card .MuiButton-root::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, transparent, rgba(255,255,255,0.2), transparent);
+  transform: translateX(-100%);
+  transition: var(--transition);
+}
+
+.feature-card .MuiButton-root:hover::after {
+  transform: translateX(100%);
+}
+
+/* ========== Buttons ========== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-sm) var(--spacing-xl);
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  font-weight: 500;
+  transition: var(--transition);
+  cursor: pointer;
+  border: none;
+  text-transform: none;
+  min-width: 160px;
+  letter-spacing: 0.25px;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, transparent, rgba(255,255,255,0.2), transparent);
+  transform: translateX(-100%);
+  transition: var(--transition);
+}
+
+.btn:hover::before {
+  transform: translateX(100%);
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-secondary {
+  background-color: var(--white);
+  color: var(--primary);
+  border: 1px solid var(--primary);
+}
+
+.btn-secondary:hover {
+  background-color: var(--primary);
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* ========== Login Page ========== */
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-md);
+  background: linear-gradient(135deg, var(--bg-light), var(--bg-white));
+}
+
+.login-card {
+  background: var(--bg-white);
+  padding: var(--spacing-xl);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-lg);
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: var(--spacing-lg);
+  text-align: center;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.form-field {
+  position: relative;
+  margin-bottom: var(--spacing-md);
+}
+
+.form-field label {
+  position: absolute;
+  left: var(--spacing-sm);
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-gray);
+  background: var(--bg-white);
+  padding: 0 var(--spacing-xs);
+  pointer-events: none;
+  transition: all 0.2s ease;
+}
+
+.form-field .MuiTextField-root {
+  width: 100%;
+}
+
+.form-field .MuiInputBase-root:focus-within + label,
+.form-field .MuiInputBase-root:not(:placeholder-shown) + label {
+  top: 0;
+  font-size: 0.875rem;
+  color: var(--primary);
+  transform: translateY(-50%) scale(0.9);
+}
+
+.error-message,
+.success-message {
+  margin-bottom: var(--spacing-md);
+}
+
+/* ========== Register Page ========== */
+.register-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-md);
+  background: linear-gradient(135deg, var(--bg-light), var(--bg-white));
+}
+
+.register-card {
+  background: var(--bg-white);
+  padding: var(--spacing-xl);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-lg);
+  width: 100%;
+  max-width: 800px;
+  transition: var(--transition);
+}
+
+.register-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.register-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: var(--spacing-lg);
+  text-align: center;
+  transition: var(--transition);
+}
+
+.register-title:hover {
+  color: var(--primary);
+  transform: scale(1.05);
+}
+
+.register-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-md);
+}
+
+/* ========== Responsive Styles ========== */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: var(--spacing-2xl) 0;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .hero-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  .features-section {
+    padding: var(--spacing-2xl) 0;
+  }
+
+  .feature-card {
+    padding: var(--spacing-lg);
+  }
+
+  .login-card,
+  .register-card {
+    padding: var(--spacing-lg);
+  }
+
+  .register-form {
+    grid-template-columns: 1fr;
+  }
+
+  .MuiToolbar-root {
+    padding: 0 var(--spacing-md) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .feature-card .MuiTypography-h5 {
+    font-size: 1.25rem;
+  }
+
+  .feature-card .MuiTypography-body1 {
+    font-size: 0.875rem;
+  }
+
+  .btn {
+    min-width: 140px;
+    padding: var(--spacing-xs) var(--spacing-lg);
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.hero-content {
+  animation: fadeIn 1s ease-out;
+}
+
+.feature-card {
+  animation: fadeIn 0.5s ease-out;
+  animation-fill-mode: both;
+}
+
+.feature-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.feature-card:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.hero-title {
+  animation: slideIn 0.8s ease-out;
+}
+
+.hero-subtitle {
+  animation: slideIn 0.8s ease-out 0.2s;
+  animation-fill-mode: both;
+}
+
+.hero-buttons {
+  animation: slideIn 0.8s ease-out 0.4s;
+  animation-fill-mode: both;
+}
+
+.btn:hover {
+  animation: pulse 0.5s ease-in-out;
+}
